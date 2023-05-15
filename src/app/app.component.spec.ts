@@ -18,10 +18,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('front-end2');
   });
 
-  it('should render title', () => {
+  it('debería renderizar un párrafo', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('front-end2 app is running!');
+    expect(compiled.querySelector('p')?.textContent).toContain('Hola mundo');
   });
 });

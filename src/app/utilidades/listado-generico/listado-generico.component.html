@@ -1,0 +1,21 @@
+<div *ngIf="!listado">
+    <span #cargando>
+        <ng-content select="[cargando]"></ng-content>
+    </span>
+    <span *ngif="!cargando.innerHTML.trim()">
+        <img style="height:300px; width: 300px;" src="https://media1.tenor.com/images/d6cd5151c04765d1992edfde14483068/tenor.gif?itemid=5662595"/>
+    </span>    
+</div>
+
+<div *ngIf="listado?.length === 0">
+    <span #vacio>
+        <ng-content select="[vacio]"></ng-content>
+    </span>
+    <span *ngIf="!vacio.innerHTML.trim()">
+        <p>No hay peliculas para mostrar</p>
+    </span>    
+</div>
+
+<ng-container *ngIf="listado && listado.length>0">
+    <ng-content select="[contenido]"></ng-content>
+</ng-container>
